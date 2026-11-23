@@ -1,0 +1,330 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aqlli Bola — Premium Brain Game</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<div class="ambient ambient-one"></div>
+<div class="ambient ambient-two"></div>
+
+<header class="navbar">
+    <a class="brand" href="#" onclick="showPage('home')">
+        <span class="brand-icon">🧠</span>
+        <span>AQLLI <b>BOLA</b></span>
+    </a>
+
+    <nav>
+        <button class="nav-link active" onclick="showPage('home')">⌂ Bosh sahifa</button>
+        <button class="nav-link" onclick="showPage('ranking')">🏆 Reyting</button>
+        <button class="nav-link" onclick="showPage('settings')">⚙ Sozlamalar</button>
+    </nav>
+
+    <button class="theme-btn" id="themeBtn">☀️</button>
+</header>
+
+<main class="main-container">
+
+    <!-- HOME -->
+    <section id="home" class="page active">
+
+        <div class="hero">
+            <div class="hero-content">
+                <div class="eyebrow">
+                    <span class="live-dot"></span>
+                    BRAIN TRAINING PLATFORM
+                </div>
+
+                <h1>Aqlingni <span>sinab ko‘r!</span></h1>
+
+                <p class="hero-description">
+                    Fikrlashingni rivojlantir, mantiqiy savollarni yech
+                    va eng kuchli bilimdonlar qatoriga qo‘shil!
+                </p>
+
+                <div class="hero-stats">
+                    <div>
+                        <strong>40+</strong>
+                        <small>Qiziqarli savollar</small>
+                    </div>
+                    <div>
+                        <strong>4</strong>
+                        <small>Yosh toifasi</small>
+                    </div>
+                    <div>
+                        <strong>∞</strong>
+                        <small>Imkoniyat</small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-art">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="brain">🧠</div>
+                <div class="float-card float-top">✦ +100 XP</div>
+                <div class="float-card float-bottom">⚡ BRAIN POWER</div>
+            </div>
+        </div>
+
+        <div class="section-heading">
+            <div>
+                <span class="section-label">YOUR JOURNEY</span>
+                <h2>O‘yinni boshlash</h2>
+            </div>
+            <span class="section-number">01 / START</span>
+        </div>
+
+        <div class="start-panel">
+            <div class="panel-title">
+                <span class="panel-icon">👤</span>
+                <div>
+                    <h3>O‘yinchi profili</h3>
+                    <p>O‘zing haqingda ma’lumot kirit</p>
+                </div>
+            </div>
+
+            <label for="nickname">ISMING YOKI NICKNAME</label>
+            <input id="nickname" type="text" maxlength="20"
+                   placeholder="Masalan: Ali_2009">
+
+            <div class="age-heading">
+                <div>
+                    <h3>Yosh toifasini tanla</h3>
+                    <p>Senga mos qiyinchilik darajasi tanlanadi</p>
+                </div>
+            </div>
+
+            <div class="age-grid">
+                <button class="age-card" data-age="3-5">
+                    <span class="age-emoji">🧸</span>
+                    <span class="age-range">03 — 05</span>
+                    <strong>Kichkintoy</strong>
+                    <small>Ranglar va shakllar</small>
+                </button>
+
+                <button class="age-card" data-age="6-10">
+                    <span class="age-emoji">🎨</span>
+                    <span class="age-range">06 — 10</span>
+                    <strong>Yosh bilimdon</strong>
+                    <small>Hisob va topishmoqlar</small>
+                </button>
+
+                <button class="age-card" data-age="11-15">
+                    <span class="age-emoji">🚀</span>
+                    <span class="age-range">11 — 15</span>
+                    <strong>Strateg</strong>
+                    <small>Mantiq va jumboqlar</small>
+                </button>
+
+                <button class="age-card" data-age="16-20">
+                    <span class="age-emoji">👑</span>
+                    <span class="age-range">16 — 20</span>
+                    <strong>Master</strong>
+                    <small>Murakkab fikrlash</small>
+                </button>
+            </div>
+
+            <button class="primary-btn" id="startBtn">
+                O‘YINNI BOSHLASH <span>→</span>
+            </button>
+            <p class="form-error" id="formError"></p>
+        </div>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span>⚡</span>
+                <h3>Tezkor fikrlash</h3>
+                <p>Vaqt bilan bellash va tez javob ber.</p>
+            </div>
+            <div class="feature-card">
+                <span>🏆</span>
+                <h3>Reyting tizimi</h3>
+                <p>O‘z natijalaringni kuzatib bor.</p>
+            </div>
+            <div class="feature-card">
+                <span>💎</span>
+                <h3>XP to‘plash</h3>
+                <p>Har bir to‘g‘ri javob uchun ball ol.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GAME -->
+    <section id="game" class="page">
+
+        <div class="game-header">
+            <div class="player-info">
+                <div class="avatar" id="playerAvatar">A</div>
+                <div>
+                    <small>O‘YINCHI</small>
+                    <h3 id="gamePlayer">Player</h3>
+                </div>
+            </div>
+
+            <div class="game-stat">
+                <span>⭐</span>
+                <div>
+                    <small>XP BALL</small>
+                    <strong id="gameScore">0</strong>
+                </div>
+            </div>
+
+            <div class="game-stat">
+                <span>⏱️</span>
+                <div>
+                    <small>VAQT</small>
+                    <strong id="timer">20</strong>
+                </div>
+            </div>
+
+            <button class="icon-btn" onclick="exitGame()" title="Chiqish">✕</button>
+        </div>
+
+        <div class="game-progress">
+            <div class="progress-label">
+                <span id="questionCount">SAVOL 1 / 10</span>
+                <span id="progressPercent">10%</span>
+            </div>
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+
+        <div class="game-center">
+            <div class="game-category" id="category">🧠 MANTIQIY SAVOL</div>
+
+            <div class="question-box">
+                <div class="question-illustration" id="questionEmoji">🧠</div>
+                <h2 id="questionText">Savol yuklanmoqda...</h2>
+                <p>To‘g‘ri javobni tanlang</p>
+            </div>
+
+            <div id="answerGrid" class="answer-grid"></div>
+
+            <div id="answerFeedback" class="feedback"></div>
+
+            <button class="primary-btn next-question" id="nextBtn" hidden>
+                KEYINGI SAVOL →
+            </button>
+        </div>
+    </section>
+
+    <!-- RESULT -->
+    <section id="result" class="page">
+        <div class="result-panel">
+            <div class="trophy">🏆</div>
+            <span class="section-label">MISSION COMPLETED</span>
+            <h1>Barakalla, <span id="resultName">Player</span>!</h1>
+            <p class="result-description" id="resultMessage">
+                Ajoyib natija!
+            </p>
+
+            <div class="result-score">
+                <small>JAMI TO‘PLANGAN XP</small>
+                <strong id="finalScore">0</strong>
+                <span>⭐ XP</span>
+            </div>
+
+            <div class="result-stats">
+                <div>
+                    <strong id="correctCount">0</strong>
+                    <small>To‘g‘ri javob</small>
+                </div>
+                <div>
+                    <strong id="wrongCount">0</strong>
+                    <small>Xato javob</small>
+                </div>
+                <div>
+                    <strong id="accuracy">0%</strong>
+                    <small>Aniqlik</small>
+                </div>
+            </div>
+
+            <button class="primary-btn" onclick="playAgain()">
+                🔄 QAYTA O‘YNASH
+            </button>
+            <button class="secondary-btn" onclick="showPage('home')">
+                BOSH SAHIFAGA QAYTISH
+            </button>
+        </div>
+    </section>
+
+    <!-- RANKING -->
+    <section id="ranking" class="page">
+        <div class="section-heading">
+            <div>
+                <span class="section-label">LEADERBOARD</span>
+                <h2>🏆 Reyting jadvali</h2>
+            </div>
+        </div>
+
+        <div class="ranking-panel">
+            <div class="ranking-head">
+                <span>#</span>
+                <span>O‘yinchi</span>
+                <span>Yosh</span>
+                <span>XP</span>
+            </div>
+            <div id="rankingList"></div>
+        </div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="settings" class="page">
+        <div class="section-heading">
+            <div>
+                <span class="section-label">CUSTOMIZATION</span>
+                <h2>⚙ Sozlamalar</h2>
+            </div>
+        </div>
+
+        <div class="settings-panel">
+            <div class="setting-row">
+                <div>
+                    <strong>🌙 Tungi rejim</strong>
+                    <p>Sayt ko‘rinishini almashtirish</p>
+                </div>
+                <input type="checkbox" id="darkToggle" checked>
+            </div>
+
+            <div class="setting-row">
+                <div>
+                    <strong>🔊 Ovoz effektlari</strong>
+                    <p>O‘yin davomida tovushlar</p>
+                </div>
+                <input type="checkbox" id="soundToggle" checked>
+            </div>
+
+            <div class="setting-row">
+                <div>
+                    <strong>⏱️ Savol vaqti</strong>
+                    <p>Har bir savol uchun sekund</p>
+                </div>
+                <select id="timeSetting">
+                    <option value="15">15 sekund</option>
+                    <option value="20" selected>20 sekund</option>
+                    <option value="30">30 sekund</option>
+                </select>
+            </div>
+
+            <button class="secondary-btn" onclick="clearRanking()">
+                Reyting tarixini tozalash
+            </button>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <span>🧠 AQLLI BOLA</span>
+    <p>© 2026 — O‘yla. Top. O‘rgan. G‘alaba qozon.</p>
+</footer>
+
+<script src="./app.js"></script>
+</body>
+</html>
